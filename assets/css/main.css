@@ -5,10 +5,11 @@
 :root {
 	--green: #4F6932;
 	--darkgreen: #00330E;
-	--brown: #C5934E;
-	--darkbrown: #9A6D32;
+	--brown: #A87D53;
+	--darkbrown: #866442;
 
-	--black: #262626;;
+	--black: #262626;
+	--white: #D9D9D9;
 
 	--spacing-1: 5px;
 	--spacing-2: 10px;
@@ -421,6 +422,7 @@ h6, .h6 {
 	}
 
 	.header__logo {
+		width: 299px;
 		margin: 10px var(--spacing-3);
 
 		align-self: flex-start;
@@ -610,17 +612,37 @@ h6, .h6 {
 	gap: var(--spacing-3);
 }
 
-.news-and-announcements .card {
-	background: white;
-	box-shadow: var(--box-shadow);
-
-	flex: 1;
-}
-
 @media (max-width: 767px) {
 	.news-and-announcements .card-group {
 		flex-direction: column;
 	}
+}
+
+.news-and-announcements .card {
+	background: white;
+	box-shadow: var(--box-shadow);
+
+	position: relative;
+
+	flex: 1;
+}
+
+.news-and-announcements .card::before {
+	content: "";
+
+	width: 25%;
+	height: 3px;
+
+	transition: all 200ms ease-in-out;
+
+	background: var(--green);
+
+	position: absolute;
+	top: 100%;
+}
+
+.news-and-announcements .card:hover::before {
+	width: 30%;
 }
 
 .news-and-announcements .card__image {
@@ -692,7 +714,7 @@ h6, .h6 {
 /*LOCATION START*/
 .location {
 	background: white;
-	border-top: 3px solid var(--green);
+	border-top: 3px solid var(--darkbrown);
 }
 
 .location .container {
@@ -735,6 +757,8 @@ h6, .h6 {
 }
 
 .location .flex-2 {
+	box-shadow: var(--box-shadow);
+
 	flex: 2;
 }
 
@@ -751,7 +775,7 @@ h6, .h6 {
 }
 
 .footer * {
-	color: white;
+	color: var(--white);
 }
 
 .footer__top {
@@ -800,7 +824,7 @@ h6, .h6 {
 .footer__bottom {
 	padding: var(--spacing-3);
 
-	background: var(--brown);
+	background: var(--darkgreen);
 }
 
 .footer__bottom .container {
